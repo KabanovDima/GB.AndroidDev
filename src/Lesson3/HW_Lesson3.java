@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class HW_Lesson3 {
     public static void main(String[] args){
-        guessNum();
+        guessWord();
     }
 
     //task1
@@ -50,7 +50,7 @@ public class HW_Lesson3 {
         String[] words = {"apple", "orange", "lemon", "banana", "apricot", "avocado", "broccoli", "carrot", "cherry", "garlic", "grape", "melon", "leak", "kiwi", "mango", "mushroom", "nut", "olive", "pea", "peanut", "pear", "pepper", "pineapple", "pumpkin", "potato"};
         String compWord = words[rand.nextInt(words.length)];
         String userWord;
-        //System.out.println("Комп загадал: " + compWord);
+        System.out.println("Комп загадал: " + compWord);
         System.out.println("Вам нужно угадать загаданное слово из следующих: apple, orange, lemon, banana, apricot, ");
         System.out.println("avocado, broccoli, carrot, cherry, garlic, grape, melon, leak, kiwi, mango, mushroom, nut, ");
         System.out.println( "olive, pea, peanut, pear, pepper, pineapple, pumpkin, potato");
@@ -59,10 +59,13 @@ public class HW_Lesson3 {
         do {
             userWord = scan.nextLine();
             //System.out.println("Юзер ввел: " + userWord);
+            if (userWord.equals(compWord)) {
+                break;
+            }
             for (int i = 0; i < 15; i++) {
-                if (userWord.equals(compWord)) {
+                /**if (userWord.equals(compWord)) {
                     break;
-                }
+                }*/
                 if (i < compWord.length() && i < userWord.length()) {
                     char a = compWord.charAt(i);
                     char b = userWord.charAt(i);
